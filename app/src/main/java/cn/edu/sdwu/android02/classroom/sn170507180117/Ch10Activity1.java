@@ -19,7 +19,6 @@ public void finishClick(View view){
     finish();//关闭界面
 }
 
-
     @Override
     protected void onStart() {
         super.onStart();
