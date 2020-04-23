@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Ch10Activity1 extends AppCompatActivity {
-private  Integer count;
+private  Integer count;//点击按键的计数器
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
