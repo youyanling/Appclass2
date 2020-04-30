@@ -1,10 +1,13 @@
 package cn.edu.sdwu.android02.classroom.sn170507180117;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -62,7 +65,15 @@ public class Ch10Activity2 extends AppCompatActivity {
             if(resultCode==RESULT_OK){
                 //联系人信息（联系人的编号哦，lookup uri）
                 String content=data.getDataString();
-                Toast.makeText(this,content, Toast.LENGTH_SHORT).show();
+                Log.i(Ch10Activity2.class.toString(),data.getData().toString());
+                ContentResolver contentResolver=this.getContentResolver();
+               Cursor cursor= contentResolver.query(data.getData(),null,null,null,null);
+               while(cursor.moveToNext()){
+                  String dispName= cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+                   Toast.makeText(this,dispName, Toast.LENGTH_SHORT).show();
+               }
+                cursor.close();
+
             }else {
                 Toast.makeText(this, "cancel", Toast.LENGTH_SHORT).show();
             }
