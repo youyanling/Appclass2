@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:onClick="call"
+            android:text="call"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:onClick="sms"
+            android:text="sms"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:onClick="chgOri"
+            android:text="chgOri"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:text="takephoto"
+            android:onClick="takephoto"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <!--TextureView一般用来显示内容流（contentstream），比如视频，相机预览-->
+    <TextureView
+        android:layout_width="wrap_content"
+        android:id="@+id/ch16_tv"
+        android:layout_height="wrap_content" />
+</LinearLayout>
